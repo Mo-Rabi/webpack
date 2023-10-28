@@ -5,14 +5,13 @@ const BundleAnalyzerPlugin =
 
 module.exports = {
   mode: "development",
-
   entry: {
     bundle: path.resolve(__dirname, "src/index.js"),
   },
 
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "[name].[content-hash].js",
+    filename: "[name].[contenthash].js",
     clean: true,
     assetModuleFilename: "[name][ext]",
   },
@@ -36,6 +35,7 @@ module.exports = {
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: "asset/resource",
       },
     ],
   },
